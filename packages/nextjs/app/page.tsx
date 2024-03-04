@@ -1,14 +1,42 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import type { NextPage } from "next";
 import { useAccount } from "wagmi";
 import { BugAntIcon, MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import { Address } from "~~/components/scaffold-eth";
+import { useScaffoldContractWrite } from "~~/hooks/scaffold-eth/useScaffoldContractWrite";
 
 const Home: NextPage = () => {
   const { address: connectedAddress } = useAccount();
+  const [stakeAmount, setStakeAmount] = useState(0);
 
+  const deposit = useScaffoldContractWrite({
+    contractName: "erc20StakingPool",
+    functionName: "stake",
+    args: [BigInt(stakeAmount)],
+  });
+  const withdraw = useScaffoldContractWrite({
+    contractName: "erc20StakingPool",
+    functionName: "withdraw",
+    args: [BigInt(0)],
+  });
+
+  const claim = useScaffoldContractWrite({
+    contractName: "erc20StakingPool",
+    functionName: "getReward",
+  });
+
+  const callDeposit = async () => {
+    await deposit.writeAsync();
+  };
+  const callWithdraw = async () => {
+    await withdraw.writeAsync();
+  };
+  const callClaim = async () => {
+    await claim.writeAsync();
+  };
   return (
     <>
       <div className="flex items-center flex-col flex-grow pt-10">
@@ -16,10 +44,22 @@ const Home: NextPage = () => {
           <h1 className="text-center">
             <span className="block text-2xl mb-2">Welcome to</span>
             <span className="block text-4xl font-bold">Scaffold-ETH 2</span>
+            <ul className="space-x-4">
+              <button className="border-2 hover:bg-red-400" onClick={callDeposit}>
+                Deposit
+              </button>
+              <button className=" border-2 hover:bg-red-400" onClick={callWithdraw}>
+                Withdraw
+              </button>
+              <button className=" border-2 hover:bg-red-400" onClick={callClaim}>
+                Claim
+              </button>
+            </ul>
           </h1>
           <div className="flex justify-center items-center space-x-2">
             <p className="my-2 font-medium">Connected Address:</p>
             <Address address={connectedAddress} />
+            <input onChange={e => setStakeAmount(parseInt(e.target.value))} value={stakeAmount} />
           </div>
           <p className="text-center text-lg">
             Get started by editing{" "}
