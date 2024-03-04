@@ -42,16 +42,16 @@ const Home: NextPage = () => {
       <div className="flex items-center flex-col flex-grow pt-10">
         <div className="px-5">
           <h1 className="text-center">
-            <span className="block text-2xl mb-2">Welcome to</span>
-            <span className="block text-4xl font-bold">Scaffold-ETH 2</span>
-            <ul className="space-x-4">
-              <button className="border-2 hover:bg-red-400" onClick={callDeposit}>
+            <span className="block text-2xl mb-2">free to</span>
+            <span className="block text-4xl font-bold">Enjoy</span>
+            <ul className="space-x-4 mt-6">
+              <button className="border-2 p-4 hover:bg-red-400" onClick={callDeposit}>
                 Deposit
               </button>
-              <button className=" border-2 hover:bg-red-400" onClick={callWithdraw}>
+              <button className=" border-2 p-4 hover:bg-red-400" onClick={callWithdraw}>
                 Withdraw
               </button>
-              <button className=" border-2 hover:bg-red-400" onClick={callClaim}>
+              <button className=" border-2 p-4 hover:bg-red-400" onClick={callClaim}>
                 Claim
               </button>
             </ul>
