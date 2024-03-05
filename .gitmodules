@@ -10,3 +10,6 @@
 [submodule "lib/playpen"]
 	path = lib/playpen
 	url = https://github.com/zeframlou/playpen
+[submodule "packages/foundry/lib/playpen"]
+	path = packages/foundry/lib/playpen
+	url = https://github.com/zeframlou/playpen
