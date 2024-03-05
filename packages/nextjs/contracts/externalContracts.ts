@@ -293,7 +293,7 @@ const externalContracts = {
     },
 
     erc20StakingPool: {
-      address: "0xd3BAac72e2708eA1DC058ac5Fc9d1e3868684338",
+      address: "0x931CA75C7235D36dB2497b52EA1660268d37e8d6",
       abi: [
         {
           type: "function",
