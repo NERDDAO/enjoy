@@ -42,16 +42,19 @@ const Home: NextPage = () => {
       <div className="flex items-center flex-col flex-grow pt-10">
         <div className="px-5">
           <h1 className="text-center">
-            <span className="block text-2xl mb-2">free to</span>
-            <span className="block text-4xl font-bold">Enjoy</span>
+            <img className="flex max-w-xs items-center centered" src='./mobilefriday.png' />
+            <br/><br/>
+            <span className="block text-4xl font-bold width-69"><span className="enjoy-accent">$ENJOY</span> is an ERC-20 token on Zora Network with a total supply of a 111,111,111,111 tokens. Launched in 2024 with an airdrop to onchain creators and collectors. <span className="enjoy-accent">!!! Airdrop 1</span> is a distribution of <span className="enjoy-accent">15% of the total supply</span>, directly into the hands of token enjoyoors.</span>
+            <br/><br/><span className="block text-4xl font-bold"><span className="enjoy-accent">Coming Soon</span></span>
+            <br/><br/><br/><br/>
             <ul className="space-x-4 mt-6">
-              <button className="border-2 p-4 hover:bg-red-400" onClick={callDeposit}>
+              <button className="border-2 p-4 hover:enjoy-hover enjoy-button" onClick={callDeposit}>
                 Deposit
               </button>
-              <button className=" border-2 p-4 hover:bg-red-400" onClick={callWithdraw}>
+              <button className=" border-2 p-4 hover:enjoy-hover enjoy-button" onClick={callWithdraw}>
                 Withdraw
               </button>
-              <button className=" border-2 p-4 hover:bg-red-400" onClick={callClaim}>
+              <button className=" border-2 p-4 hover:enjoy-hover enjoy-button" onClick={callClaim}>
                 Claim
               </button>
             </ul>
@@ -61,47 +64,48 @@ const Home: NextPage = () => {
             <Address address={connectedAddress} />
             <input onChange={e => setStakeAmount(parseInt(e.target.value))} value={stakeAmount} />
           </div>
-          <p className="text-center text-lg">
-            Get started by editing{" "}
-            <code className="italic bg-base-300 text-base font-bold max-w-full break-words break-all inline-block">
-              packages/nextjs/app/page.tsx
-            </code>
-          </p>
-          <p className="text-center text-lg">
-            Edit your smart contract{" "}
-            <code className="italic bg-base-300 text-base font-bold max-w-full break-words break-all inline-block">
-              YourContract.sol
-            </code>{" "}
-            in{" "}
-            <code className="italic bg-base-300 text-base font-bold max-w-full break-words break-all inline-block">
-              packages/hardhat/contracts
-            </code>
-          </p>
+          <br/><br/>
+          <span className="block text-4xl font-bold width-69"><span className="enjoy-accent">!!! Airdrop 1 Criteria</span><br/>
+!!! Airdrop 1 will be generously distributed to:<br/>
++++Top Creators<br/>
++++Top Collectors<br/>
++++Top Holders<br/>
++++Seed Club Collector<br/>
+!!! Airdrop 2 Create onchain and earn points to be eligible for !!! Airdrop 2. More details imminent.<br/></span>
+<br/><br/>
+<span className="block text-4xl font-bold width-69"><span className="enjoy-accent">!!! Airdrop 2</span><br/>
+Create onchain and earn points to be eligible for !!! Airdrop 2. More details imminent.<br/></span>
+<br/><br/>
+      <ul className="text-center space-x-4 mt-6 items-center">
+       <a onClick={() => { window.open('https://twitter.com', '_blank');}} className="border-2 p-4 hover:enjoy-hover enjoy-button">
+          Twitter
+        </a>
+        <a onClick={() => { window.open('https://warpcast.com', '_blank');}} className="border-2 p-4 hover:enjoy-hover enjoy-button">
+          Warpcast
+        </a>
+            </ul>
         </div>
 
         <div className="flex-grow bg-base-300 w-full mt-16 px-8 py-12">
-          <div className="flex justify-center items-center gap-12 flex-col sm:flex-row">
-            <div className="flex flex-col bg-base-100 px-10 py-10 text-center items-center max-w-xs rounded-3xl">
-              <BugAntIcon className="h-8 w-8 fill-secondary" />
-              <p>
-                Tinker with your smart contract using the{" "}
-                <Link href="/debug" passHref className="link">
-                  Debug Contracts
-                </Link>{" "}
-                tab.
-              </p>
-            </div>
-            <div className="flex flex-col bg-base-100 px-10 py-10 text-center items-center max-w-xs rounded-3xl">
-              <MagnifyingGlassIcon className="h-8 w-8 fill-secondary" />
-              <p>
-                Explore your local transactions with the{" "}
-                <Link href="/blockexplorer" passHref className="link">
-                  Block Explorer
-                </Link>{" "}
-                tab.
-              </p>
-            </div>
-          </div>
+        <span className="block width-33"><span className="enjoy-accent">$Enjoy
+         is not owned, managed or controlled by Zora Labs ("Zora") or any of their respective principals or affiliates. $enjoy tokens are intended as collectible items for individual enjoyment only, not for investment purposes.<br/></span></span>
+         <br/><br/>
+         <img className="flex max-w-xs items-center centered " src='./logo.webp' />
+        </div>
+        <div className="photos width-85">
+          <img className="" src='./3-dragons.jpg' />
+          <img className="" src='./100-percent-enjoyoor.jpg' />
+          <img className="" src='./coincidence-1.jpg' />
+          <img className="" src='./coincidence-2.jpg' />
+          <img className="" src='./enjoyoor-onchain.jpg' />
+          <img className="" src='./escape-the-matrix.jpg' />
+          <img className="" src='./everybody-gangsta.jpg' />
+          <img className="" src='./fighting-fudders.jpg' />
+          <img className="" src='./fud-or-25.jpg' />
+          <img className="" src='./hello-irs.jpg' />
+          <img className="" src='./tokenfudder.jpg' />
+          <img className="" src='./wario-zorb.jpg' />
+          <img className="" src='./who-up-zorb.jpg' />
         </div>
       </div>
     </>

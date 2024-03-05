@@ -1494,6 +1494,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": ~5.40.0
     "@uniswap/sdk-core": ~4.0.1
     "@uniswap/v2-sdk": ~3.0.1
+    anvil: ^0.0.6
     autoprefixer: ~10.4.12
     blo: ~1.0.1
     daisyui: 4.5.0
@@ -3095,6 +3096,13 @@ __metadata:
   version: 6.2.1
   resolution: "ansi-styles@npm:6.2.1"
   checksum: ef940f2f0ced1a6347398da88a91da7930c33ecac3c77b72c5905f8b8fe402c52e6fde304ff5347f616e27a742da3f1dc76de98f6866c69251ad0b07a66776d9
+  languageName: node
+  linkType: hard
+
+"anvil@npm:^0.0.6":
+  version: 0.0.6
+  resolution: "anvil@npm:0.0.6"
+  checksum: 505c5d00890b005f25824376a97ccee1d317f93731d6389dfbe1eecc08590a4cb53047d5c2ebd84e27963af06d124e51dd8b6b096512b985ad1f475e3c057df7
   languageName: node
   linkType: hard
 
@@ -8823,6 +8831,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "se-2@workspace:."
   dependencies:
+    anvil: ^0.0.6
     husky: ~8.0.3
     lint-staged: ~13.2.2
   languageName: unknown
