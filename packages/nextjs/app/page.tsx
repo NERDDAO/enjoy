@@ -46,7 +46,11 @@ const Home: NextPage = () => {
             <div className="flex items-center flex-col flex-grow pt-10">
                 <div className="px-5">
                     <h1 className="text-center">
-                        <img className="flex max-w-xs items-center centered" src="./mobilefriday.png" />
+                        <ul className="flex flex-row">
+                            <img className="flex max-w-xs items-center centered" src="./mobilefriday.png" />
+
+                            <img className="flex max-w-xs items-center centered " src="./enjoy-con-letras.png" />
+                        </ul>
                         <br />
                         <br />
                         <span className="block text-4xl font-bold width-69">
@@ -143,6 +147,7 @@ const Home: NextPage = () => {
                     <br />
                     <br />
                     <img className="flex max-w-xs items-center centered " src="./logo.webp" />
+
                 </div>
                 <div className="photos width-85">
                     <img className="" src="./3-dragons.jpg" />
