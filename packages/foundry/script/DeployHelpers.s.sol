@@ -20,7 +20,7 @@ contract ScaffoldETHDeploy is Script {
         internal
         returns (uint256 localhostPrivateKey)
     {
-        if (block.chainid == 31337) {
+        if (block.chainid == 999999) {
             root = vm.projectRoot();
             path = string.concat(root, "/localhost.json");
             string memory json = vm.readFile(path);
