@@ -1376,7 +1376,7 @@ const externalContracts = {
             ],
         },
         stakingContractFactory: {
-            address: "0xd3BAac72e2708eA1DC058ac5Fc9d1e3868684338",
+            address: "0x10C4fB64e1E326646A2524e316AE458DAc56276D",
             abi: [
                 {
                     type: "constructor",
