@@ -7,15 +7,15 @@ import "~~/styles/globals.css";
 const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL
   ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
   : `http://localhost:${process.env.PORT}`;
-const imageUrl = `${baseUrl}/thumbnail.jpg`;
+const imageUrl = `${baseUrl}/mobilefriday.png`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: "Scaffold-ETH 2 App",
+    default: "Enjoy App",
     template: "%s | Scaffold-ETH 2",
   },
-  description: "Built with 🏗 Scaffold-ETH 2",
+  description: "Enjoy is an ERC-20 token on Zora Network",
   openGraph: {
     title: {
       default: "Scaffold-ETH 2 App",
@@ -32,13 +32,13 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     images: [imageUrl],
     title: {
-      default: "Scaffold-ETH 2",
+      default: "Enjoy App",
       template: "%s | Scaffold-ETH 2",
     },
-    description: "Built with 🏗 Scaffold-ETH 2",
+    description: "Enjoy is an ERC-20 token on Zora Network",
   },
   icons: {
-    icon: [{ url: "/favicon.png", sizes: "32x32", type: "image/png" }],
+    icon: [{ url: "/enjoy-logo.webp", sizes: "32x32", type: "image/webp" }],
   },
 };
 
