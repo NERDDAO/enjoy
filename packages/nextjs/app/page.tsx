@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { ethers } from "ethers";
 import type { NextPage } from "next";
 import { useAccount } from "wagmi";
 import { BugAntIcon, MagnifyingGlassIcon } from "@heroicons/react/24/outline";
@@ -12,6 +13,15 @@ const Home: NextPage = () => {
   const { address: connectedAddress } = useAccount();
   const [stakeAmount, setStakeAmount] = useState(0);
   const [withdrawAmount, setWithdrawAmount] = useState(0);
+  const [approvalAmount, setApprovalAmount] = useState(0);
+  const erc20StakingPool = "0x98574fDB7632fceCDFd509425575E00b1b4d62e5";
+  const MAX_UINT256 = ethers.constants.MaxUint256.toString();
+
+  const approve = useScaffoldContractWrite({
+    contractName: "depositingTokenABI",
+    functionName: "approve",
+    args: [erc20StakingPool, BigInt(MAX_UINT256)],
+  });
 
   const deposit = useScaffoldContractWrite({
     contractName: "erc20StakingPool",
@@ -21,7 +31,7 @@ const Home: NextPage = () => {
   const withdraw = useScaffoldContractWrite({
     contractName: "erc20StakingPool",
     functionName: "withdraw",
-    args: [BigInt(withdrawAmount || "0")], // Use withdrawAmount, fallback to "0"
+    args: [BigInt(withdrawAmount || "0")],
   });
 
   const claim = useScaffoldContractWrite({
@@ -62,6 +72,10 @@ const Home: NextPage = () => {
             <br />
             <br />
             <ul className="space-x-4 mt-6">
+              <button onClick={() => approve.writeAsync()} className="border-2 p-4 hover:enjoy-hover enjoy-button">
+                Approve
+              </button>
+
               <button className="border-2 p-4 hover:enjoy-hover enjoy-button" onClick={callDeposit}>
                 Deposit
               </button>
